@@ -16,10 +16,19 @@
 .container h1{
  color:#ffff;
 }
+.scene{
+border:1px solid red ; 
+width :50%;
+height:50%;
+position:relative;
+margin :5rem auto;
+}
 #circle{
  width:200px;
  height:200px;
- position:relative;
+ margin:1rem;
+ position:absolute;
+ display:flex;
  background:darkblue;
  border-radius:50%;
 }

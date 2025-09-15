@@ -1,5 +1,3 @@
-
-
 function  createObject (name) {
 	let newObject = {
 	    name:name,
@@ -61,18 +59,4 @@ const squreshape = createObject("squre");
 const circleshape = createObject("circle");
 
 
-const circle1 = createShape(circleshape);
-
-
-
-const btnCircle = document.createElement("div");
-
-
-
-
-
-
-
-
-
-
+export const circle1 = createShape(circleshape);

@@ -32,6 +32,43 @@ margin :5rem auto;
  background:darkblue;
  border-radius:628px;
 }
+.shapes-container{
+ border:1px solid red;
+ display:flex;
+ align-items:center;
+ justify-content:space-evenly;
+ margin:2rem auto;
+ width:70%;
+ height:3rem;
+}
+
+.circle{
+ border:1px solid red ;
+ position:relative;
+ background:red;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

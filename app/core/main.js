@@ -1,5 +1,4 @@
-
-
+import  {circle1} from  "./logic.js";
 
 const circle = document.getElementById("circle");
 
@@ -7,9 +6,9 @@ const circle = document.getElementById("circle");
 
 const input = document.getElementById("input");
 
-console.log(circle.offsetHeight);
+//console.log(circle.offsetHeight);
 
-console.log(circle.offsetWidth);
+//console.log(circle.offsetWidth);
 
 
 const change = document.getElementById("change");
@@ -50,11 +49,51 @@ function changePos (obj) {
 			}
 		})
 	})
-	}
-	
+}	
 }
 
 changePos(circle);
+
+
+
+
+
+function createCircle(){
+   const scene = document.getElementById("scene");
+   let obj = document.createElement("div");
+   obj.classList = circle1.name;
+   obj.style.width = circle1.width + "px";
+   obj.style.height = circle1.height + "px";
+   obj.style.borderRadius= circle1.border_radius + "px";
+   scene.appendChild(obj); 
+}
+
+const btnCircle = document.getElementById("btn-shape-circle");
+
+
+const btn-create-trangle = document.getElementById("btn-shape-trangle");
+
+
+const btn-create-squre = document.getElementById("btn-shape-squre");
+
+btnCircle.addEventListener("onClick",createCircle());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

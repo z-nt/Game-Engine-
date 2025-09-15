@@ -12,32 +12,46 @@ function  createObject (name) {
 } 
 
 
-function circle(){
-	console.log("i am circle ")
+function circle(obj){	
+	if(!obj){
+	    console.log("there is no object");
+		return 0;
+	}else{
+	    let Pi = 3.14;
+	    let r = obj.width;
+	    let C_M = r * Pi;
+	    let radius = C_M;
+	    obj.border_radius = radius;	
+	return obj;
+	}
 }
 
 
 
-function trangle(){
-	console.log("i am trangle ");
+function trangle(obj){
+	console.log(obj);
 }
 
 
-function squre(){
-	console.log("i am squre");
+function squre(obj){
+	console.log(obj);
 }
 
 function createShape(btn){
+      let newObj;	
 	if(!btn){
 	    console.log("do not create shape");	   	
 	}else if(btn.name == "circle"){
-		return circle();
+		 circle(btn);
 	}else if(btn.name == "trangle"){
-		return trangle();
+		 trangle(btn);
 	}else if (btn.name == "squre"){
-	  	return squre();
+	  	 squre(btn);
 	}
 
+       newObj = btn;
+
+          return newObj	
 }
 
 const trangleshape = createObject("trangle");
@@ -46,10 +60,12 @@ const squreshape = createObject("squre");
 
 const circleshape = createObject("circle");
 
-createShape (trangleshape);
-createShape (squreshape);
-createShape (circleshape);
-createShape ();
+
+const circle1 = createShape(circleshape);
+
+
+
+const btnCircle = document.createElement("div");
 
 
 

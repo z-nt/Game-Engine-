@@ -1,5 +1,5 @@
 import  {circle1} from  "./logic.js";
-
+import  {move} from "./movment.js";
 
 
 
@@ -9,11 +9,13 @@ btnCircle.addEventListener("click",function(){
    const scene = document.getElementById("scene");
    let obj = document.createElement("div");
    obj.classList = circle1.name;
+   obj.id = circle1.name;
    obj.style.width = circle1.width + "px";
    obj.style.height = circle1.height + "px";
    obj.style.borderRadius= circle1.border_radius + "px";
    scene.appendChild(obj); 
 	changePos(obj);
+	move(obj);
 })
 
 const input = document.getElementById("input");
@@ -73,7 +75,6 @@ const btnT = document.getElementById("btn-shape-trangle");
 
 
 const btnS = document.getElementById("btn-shape-squre");
-
 
 
 

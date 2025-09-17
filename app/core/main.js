@@ -1,22 +1,49 @@
 import  {circle1} from  "./logic.js";
+
 import  {move} from "./movment.js";
+
+
+
+
+const btnT = document.getElementById("btn-shape-trangle");
+
+
+const btnS = document.getElementById("btn-shape-squre");
 
 
 
 const btnCircle = document.getElementById("btn-shape-circle");
 
-btnCircle.addEventListener("click",function(){
-   const scene = document.getElementById("scene");
-   let obj = document.createElement("div");
-   obj.classList = circle1.name;
-   obj.id = circle1.name;
-   obj.style.width = circle1.width + "px";
-   obj.style.height = circle1.height + "px";
-   obj.style.borderRadius= circle1.border_radius + "px";
-   scene.appendChild(obj); 
-	changePos(obj);
-	move(obj);
-})
+
+const scene = document.getElementById("scene");
+
+let arrOfObjects=[];
+
+function createObjectFunc(newScene,obj){
+	let newObject = document.createElement("div"); 
+	if(obj){
+		newObject.classList=obj.name;
+		newObject.style.width=obj.width + "px";
+		newObject.style.height = obj.height + "px";
+		newObject.style.borderRadius = obj.border_radius + "px";
+	      if(newObject){
+		arrOfObjects.push(newObject);
+		let indexOfObject = arrOfObjects.indexOf(newObject);
+		newObject.id = obj.name + indexOfObject;      
+	      }	
+		newScene.appendChild(newObject);
+		changePos(newObject);
+	}else{
+	  console.log("there is no object");
+	}
+    console.log(newObject);		
+}
+
+
+btnCircle.addEventListener("click",()=>{
+	createObjectFunc(scene,circle1);
+});
+
 
 const input = document.getElementById("input");
 
@@ -68,13 +95,6 @@ function changePos (obj) {
 
 
 
-
-
-
-const btnT = document.getElementById("btn-shape-trangle");
-
-
-const btnS = document.getElementById("btn-shape-squre");
 
 
 

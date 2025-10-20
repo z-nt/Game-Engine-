@@ -1,108 +1,61 @@
-import  {circle1} from  "./logic.js";
-
-import  {move} from "./movment.js";
 
 
 
 
-const btnT = document.getElementById("btn-shape-trangle");
+/*create-object*/
 
-
-const btnS = document.getElementById("btn-shape-squre");
-
-
-
-const btnCircle = document.getElementById("btn-shape-circle");
-
-
-const scene = document.getElementById("scene");
-
-let arrOfObjects=[];
-
-function createObjectFunc(newScene,obj){
-	let newObject = document.createElement("div"); 
-	if(obj){
-		newObject.classList=obj.name;
-		newObject.style.width=obj.width + "px";
-		newObject.style.height = obj.height + "px";
-		newObject.style.borderRadius = obj.border_radius + "px";
-	      if(newObject){
-		arrOfObjects.push(newObject);
-		let indexOfObject = arrOfObjects.indexOf(newObject);
-		newObject.id = obj.name + indexOfObject;      
-	      }	
-		newScene.appendChild(newObject);
-		changePos(newObject);
-	}else{
-	  console.log("there is no object");
-	}
-    console.log(newObject);		
+let obj={
+ name:null,
 }
+const createobjbtn = document.getElementById("create-object");
 
 
-btnCircle.addEventListener("click",()=>{
-	createObjectFunc(scene,circle1);
-});
 
 
-const input = document.getElementById("input");
+//function for create get new object name;
+function addPromt(){  
 
-//console.log(circle.offsetHeight);
+//function for remove promt 
 
-//console.log(circle.offsetWidth);
-
-
-const change = document.getElementById("change");
-
-change.addEventListener("click",( )=>{
-	circle.style.width=input.value + "px";	
-	circle.style.height=input.value + "px"  ;	
-});
-
-function changePos (obj) {
-	let pluspos= 50;
- const buttons = document.querySelectorAll(".movement-button");
-	if (obj) {
-	buttons.forEach(btn=>{
-		btn.addEventListener("click",()=>{
-			if(btn.id=="up"){
-			    pluspos -= 10;	
-			   obj.style.top = pluspos + "px";
-			}
-			else if (btn.id =="bottom"){
-
-			    pluspos += 10;	
-			   obj.style.top= pluspos + "px";
-			}
-			else if (btn.id == "left" ) {
-
-			    pluspos -= 10;	
-			   obj.style.left= pluspos + "px";
-			}
-
-			else if (btn.id == "right" ) {
-
-			    pluspos += 10;	
-			   obj.style.left= pluspos + "px";
-			}else {
-			   console.log("there is no shape");
-	
-			}
-		})
-	})
-}	
+function removePromt(button){
+//	button.parentElement.remove();
+	console.log("remove");
+	console.log(button);
 }
 
 
 
+//create promt Element
+   let promt= document.createElement("div");
+     	  promt.className="promt";
+	  promt.innerHTML=`
+	 <div">
+	 	<input class="getnameobject" id="promtinput" placeholder="insert object name..."/>
+		<button>save</button>
+		<button id="removebtn">exit</button>
+	 </div>
+	  `;
+//style the promt 
+	Object.assign(promt.style,{
+	  position:"absolute",
+	  color:"white",
+	  top:"300px",
+	  left:"400px",
+	  borderRadius:"8px",
+	  boxShadow:"0 4px 6px rgba(0,0,0,0.1)"
+	});
+
+//add to home page 
+	let homeContainer = document.getElementById("home-container");
+	homeContainer.appendChild(promt);
+}
 
 
 
-
-
-
-
-
+createobjbtn.addEventListener("click",(e) => {
+	e.preventDefault();
+	addPromt();
+});
 
 
 

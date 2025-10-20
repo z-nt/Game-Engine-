@@ -61,4 +61,97 @@ background:#222;
 resize:both;
 overflow:hidden;
 }
+.objects-menu-nav{
+border:1px solid red ;
+width:90%;
+height:90%;
+margin:1rem;
+display:flex;
+flex-direction:column;
+text-align:right;
+ li{
+  border:1px solid red ;
+ }
+ #create-object{
+  border:none ;
+  height:2rem;
+  background:#fff;
+  color:#222;
+  font-weight:bold;
+  font-size:1rem;
+  width:100%;
+  text-align:center;
+  cursor:pointer; 
+ }
+}
+
+
+
+/*promt dive style*/
+.promt{
+border:none;
+display:flex;
+flex-direction:column;
+flex-wrap:wrap;
+justify-content:center;
+align-items:center;
+  input{
+    border:none ;
+    border-radius:8px;
+    padding-left:1rem;
+    background:#fff;
+    width:90%;
+    height:3rem;
+    margin:0.5rem;
+    font-size:1rem;
+    font-weight:bold;
+    position:relative; 
+    outline:none;
+    color:#222;
+  }
+
+ button{
+  border:none ;
+  margin:1rem;
+  width:6rem;
+  height:3rem;
+  background:#222;
+  color:#fff;
+  font-weight:bold; 
+  font-size:1rem;
+  border-radius:8px;
+  cursor:pointer;
+  transition:background 0.5s ease;
+ }
+
+ button:hover{
+ background:#fff;
+ color:#222;
+ 
+ }
+
+
+
+}
+
+
+
+/*promt dive style*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

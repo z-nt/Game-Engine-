@@ -1,7 +1,4 @@
 
-
-
-
 /*create-object*/
 
 let obj={
@@ -9,21 +6,8 @@ let obj={
 }
 const createobjbtn = document.getElementById("create-object");
 
-
-
-
 //function for create get new object name;
 function addPromt(){  
-
-//function for remove promt 
-
-function removePromt(button){
-//	button.parentElement.remove();
-	console.log("remove");
-	console.log(button);
-}
-
-
 
 //create promt Element
    let promt= document.createElement("div");
@@ -31,8 +15,9 @@ function removePromt(button){
 	  promt.innerHTML=`
 	 <div">
 	 	<input class="getnameobject" id="promtinput" placeholder="insert object name..."/>
-		<button>save</button>
+		<button id="savebtn">save</button>
 		<button id="removebtn">exit</button>
+		<div class="status-message" id="statusMessage"></div>
 	 </div>
 	  `;
 //style the promt 
@@ -48,20 +33,97 @@ function removePromt(button){
 //add to home page 
 	let homeContainer = document.getElementById("home-container");
 	homeContainer.appendChild(promt);
+
+
+
+//remove promt
+//function for remove promt 
+function removePromt(obj){
+	obj.remove();
+}
+const removepromtbtn = document.getElementById("removebtn");
+removepromtbtn.addEventListener("click",(e)=>{
+	e.preventDefault();
+	removePromt(promt);
+});
+
+//save prompt value 
+//button
+const saveValueInputPromt = document.getElementById("savebtn");
+//input
+saveValueInputPromt.addEventListener("click",saveValueInput);
+function saveValueInput(){
+
+	const input= document.getElementById("promtinput");
+
+	let errMessage = "This field cannot be empty";
+	let successMessage="Object saved successfully!";
+	
+	let statusMessage = document.getElementById("statusMessage");
+
+	const value = input.value.trim();
+
+	if(value == ""){
+		showError("please fill in this field");
+		return false;
+	}else{
+	    	showSuccess("object saved");
+		obj.name = value;
+		 createUserObject(obj);
+		removePromt(promt);
+	}
+
+	//clear input after delay;
+	setTimeout(()=>{
+		resetInput();
+
+	},2000);
+
+//function for showing error message
+	function showError(message){
+	  input.placeholder=`${message}`;
+	  input.classList.remove("success");
+	  input.classList.add("empty-error");
+	  input.value = "";
+	  input.focus();
+		statusMessage.textContent = message;
+		statusMessage.style.color="#ff4757";
+	}
+// function for showing success message
+	function showSuccess(message){	
+	  input.placeholder=`${message}`;
+	  input.classList.remove("empty-error");
+	  input.classList.add("success");
+	  input.value = "";
+		statusMessage.textContent = message;
+		statusMessage.style.color="#2ed573";
+	}
+	
+// function for resetInput 
+	function resetInput() {	  
+	   input.placeholder="Enter your name";
+	   input.classList.remove("empty-error","success");
+		statusMessage.textContent = "" ;
+	}
 }
 
 
+}
 
+//create promt
 createobjbtn.addEventListener("click",(e) => {
 	e.preventDefault();
-	addPromt();
+	addPromt();	
 });
 
-
-
-
-
-
+export const objectData = (function createUserObject(obj){
+	let newNavItem = document.createElement("li");
+	newNavItem.classList.add="nav-items";
+	newNavItem.id = obj.name;
+	let navMenu = document.getElementById("objectList");
+	newNavItem.innerHTML = `${obj.name}`;
+	navMenu.appendChild(newNavItem);
+});
 
 
 

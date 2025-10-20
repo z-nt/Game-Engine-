@@ -129,8 +129,36 @@ align-items:center;
  color:#222;
  
  }
+.input.empty-error{
+  border-color:#ff4757;
+  background-color:#fff5f5;
+}
 
 
+.input.empty-error::placeholder{
+  color:#ff4757;
+  font-weight:bold;
+}
+
+
+.input.success{
+  border-color:#2ed573;
+  background-color:#fff5f5;
+}
+
+
+.input.success::placeholder{
+  color:#2ed573;
+  font-weight:bold;
+}
+
+.status-message{
+  margin-top:15px;
+  font-size:16px;
+  min-height:20px;
+  text-align:center;
+  font-weight:bold;
+}
 
 }
 

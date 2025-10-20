@@ -45,15 +45,7 @@ perspective:1500px;
     transform-style:preserve-3d;
     transform:translateZ(700px);
  }	
-
-
 }
-
-
-
-
-
-
 .show-result-object{
 border:1px solid yellow;
 height:50vh;
@@ -65,7 +57,7 @@ width:30%;
 min-width:20%;
 min-height:80%;
 border:1px solid blue;
-background:blue;
+background:#222;
 resize:both;
 overflow:hidden;
 }

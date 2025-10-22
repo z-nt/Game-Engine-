@@ -1,10 +1,23 @@
+let objects = []
+
 export function checkStorage(){
 	const savedObject = JSON.parse( localStorage.getItem("obj"));
-	let objects = []
+
 	 if(savedObject) {
 		 createElementUser(savedObject);
 		objects.push(savedObject);
-		 
+		
+		 if(objects.length > 0) {
+			
+		addPropertyTOnewObject(objects);
+
+
+		 }
+
+
+
+
+
 	 }else{
  console.log("there is no bject");
 	 }
@@ -29,6 +42,40 @@ function createElementUser(elem){
    newNavItem.innerHTML = `${elem.name}`;
    navMenu.appendChild(newNavItem);
 }
+
+
+
+
+///function add propertis to the new object
+
+function addPropertyTOnewObject(arr){
+	console.log(arr);
+}
+
+
+function uiComponent (){
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

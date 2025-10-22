@@ -1,14 +1,14 @@
+import {checkStorage} from "./object.js";
+
+
 
 /*create-object*/
-
 let obj={
  name:null,
 }
 const createobjbtn = document.getElementById("create-object");
-
 //function for create get new object name;
 function addPromt(){  
-
 //create promt Element
    let promt= document.createElement("div");
      	  promt.className="promt";
@@ -33,9 +33,6 @@ function addPromt(){
 //add to home page 
 	let homeContainer = document.getElementById("home-container");
 	homeContainer.appendChild(promt);
-
-
-
 //remove promt
 //function for remove promt 
 function removePromt(obj){
@@ -50,6 +47,7 @@ removepromtbtn.addEventListener("click",(e)=>{
 //save prompt value 
 //button
 const saveValueInputPromt = document.getElementById("savebtn");
+
 //input
 saveValueInputPromt.addEventListener("click",saveValueInput);
 function saveValueInput(){
@@ -69,8 +67,11 @@ function saveValueInput(){
 	}else{
 	    	showSuccess("object saved");
 		obj.name = value;
-		 createUserObject(obj);
+		if(obj.name !== null){
+		 CreateUserObject(obj);
+		  checkStorage();	
 		removePromt(promt);
+		}
 	}
 
 	//clear input after delay;
@@ -116,16 +117,12 @@ createobjbtn.addEventListener("click",(e) => {
 	addPromt();	
 });
 
-export const objectData = (function createUserObject(obj){
-	let newNavItem = document.createElement("li");
-	newNavItem.classList.add="nav-items";
-	newNavItem.id = obj.name;
-	let navMenu = document.getElementById("objectList");
-	newNavItem.innerHTML = `${obj.name}`;
-	navMenu.appendChild(newNavItem);
-});
-
-
-
+ async function CreateUserObject(obj){
+	console.log(obj.name);
+	  if(obj){
+		await localStorage.setItem("obj",JSON.stringify(obj));
+	}
+	 return obj;
+};
 
 

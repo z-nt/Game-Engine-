@@ -69,9 +69,6 @@ margin:1rem;
 display:flex;
 flex-direction:column;
 text-align:right;
- li{
-  border:1px solid red ;
- }
  #create-object{
   border:none ;
   height:2rem;
@@ -159,14 +156,15 @@ align-items:center;
   text-align:center;
   font-weight:bold;
 }
-
 }
 
-
-
 /*promt dive style*/
-
-
+.newObjectItem{
+ border:1px solid red !important ;
+ font-size : 1rem;
+ font-weight:bold;
+ cursor:pointer;
+}
 
 
 

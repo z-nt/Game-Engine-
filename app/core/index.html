@@ -9,11 +9,17 @@
 <body>
 	<div class="home-container" id="home-container">
 		<div class="maps-style">
-	        	<div  class="dynamic-div  map-container">
+	        	<div id="map-cont" class="dynamic-div  map-container">
 				<div class="cube"></div>
+				<div class="axis"> </div>
 			</div>
 
-			<div  class="dynamic-div  show-result-object"></div>
+			<div  class="dynamic-div  show-result-object">
+				<p id="showRX"></p>
+				
+				<p id="showRY"></p>
+
+			</div>
 		</div>
 
 		<div  class="objects-menu">
@@ -23,10 +29,11 @@
 				</li>
 			</ul>
 
-		</div>
+
 	</div>
 
     <script  type="module" src="./main.js"  > </script>
     <script  type="module" src="./object.js"  > </script>
+    <script  type="module" src="./pos.js"  > </script>
 </body>
 </html>

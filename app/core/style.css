@@ -6,7 +6,7 @@ background:gray;
 overflow:hidden;
 }
 .home-container{
-border:1px solid red ;
+border:none ;
 width:100%;
 height:100vh;
 position:relative;
@@ -14,7 +14,7 @@ margin:0;
 display:flex;
 }
 .maps-style{
-border:1px solid gray;
+border:none ;
 width:70%;
 height:100%;
 position:relative;
@@ -30,9 +30,17 @@ flex-direction:column;
   }
 }
 .map-container{
-border:1px solid green;
+border:none;
 height:50vh;
-background:#222;
+background:
+ linear-gradient(90deg,#ccc 10%,transparent 20%),
+ linear-gradient(-180deg,#ccc 10%,transparent 20%);
+/* linear-gradient(45deg,transparent 75% , #ccc 75% ),
+ linear-gradient(-45deg,transparent 75%,#ccc 75%);
+*/
+
+ background-size:20px 20px;
+
 position:relative;
 display:flex;
 justify-content:center;
@@ -44,25 +52,38 @@ perspective:1500px;
     position:absolute;
     transform-style:preserve-3d;
     transform:translateZ(700px);
+    background:red;
  }	
+ .axis{
+ width:50px;
+ height:50px;
+ border-left:1px solid red ;
+ border-bottom:1px solid red ;
+ position:absolute;
+ bottom:1rem;
+ left:1rem;
+ background:none; 
+ }
 }
 .show-result-object{
-border:1px solid yellow;
+border:none;
 height:50vh;
-background:yellow;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 .objects-menu{
 height:100%;
 width:30%;
 min-width:20%;
 min-height:80%;
-border:1px solid blue;
+border:none;
 background:#222;
 resize:both;
 overflow:hidden;
 }
 .objects-menu-nav{
-border:1px solid red ;
+border:none ;
 width:90%;
 height:90%;
 margin:1rem;
@@ -166,7 +187,12 @@ align-items:center;
  cursor:pointer;
 }
 
-
+#showR{
+border:1px solid red ;
+background:none;
+width:10rem;
+height:4rem;
+}
 
 
 
